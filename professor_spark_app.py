@@ -1,14 +1,29 @@
 import streamlit as st
 import google.generativeai as genai
 import os
-import database as db # Mengimpor file database.py kita
+import database as db 
+from dotenv import load_dotenv 
 
+load_dotenv()
 # --- KONFIGURASI API KEY GEMINI ---
-GOOGLE_API_KEY = "AIzaSyDe5y53KXU56fzbYeVKtS2FeFCLozrkWUQ" # GANTI DENGAN API KEY ANDA
+# API Key sekarang diambil dari environment variable yang dimuat dari .env
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+if not GOOGLE_API_KEY:
+    st.error("FATAL: GOOGLE_API_KEY not found in .env file or as an environment variable. Please create .env and add your key.")
+    st.stop() # Menghentikan eksekusi aplikasi jika key tidak ada
+
 try:
     genai.configure(api_key=GOOGLE_API_KEY)
+# ... (sisa blok try-except untuk konfigurasi genai tetap sama) ...
 except AttributeError:
-    os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
+    # os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY # Ini tidak lagi diperlukan jika load_dotenv berhasil
+    # Cukup pastikan genai.configure dipanggil dengan key yang valid
+    st.error("Error configuring Google AI: AttributeError. Check library version or API key setup.")
+    st.stop()
+except Exception as e:
+    st.error(f"Error configuring Google AI: {e}")
+    st.stop()
 
 # --- INISIALISASI MODEL GEMINI ---
 model_name = 'gemini-1.5-flash-latest'
