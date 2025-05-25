@@ -25,8 +25,7 @@ This project was developed as part of a technical code challenge.
 
 Our current architecture is designed for simplicity and rapid prototyping, running locally:
 
-![Architecture Diagram](image_742a3a.png)
-_(Pastikan Anda mengganti `image_742a3a.png` dengan nama file diagram arsitektur yang benar jika berbeda, dan unggah file gambar tersebut ke repositori GitHub Anda di folder yang sama dengan README.md agar bisa tampil)._
+![Architecture Diagram](prof-spark.drawio.png.png)
 
 **Flow:**
 
