@@ -25,7 +25,7 @@ This project was developed as part of a technical code challenge.
 
 Our current architecture is designed for simplicity and rapid prototyping, running locally:
 
-![Architecture Diagram](prof-spark.drawio.png.png)
+![Architecture Diagram](prof-spark.drawio.png)
 
 **Flow:**
 

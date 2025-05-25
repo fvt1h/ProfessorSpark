@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtualenv
+venv/
+.venv/
+ENV/
+env/
+ENV.bak/
+env.bak/
+
+# SQLite Database Files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.DS_Store
+
+# Environment variables file
+.env
